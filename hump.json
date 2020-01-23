@@ -1,0 +1,53 @@
+{
+    "paths": {
+        "/random": {
+            "get": {
+                "description": "Get a random pet",
+                "responses": {
+                    "200": {
+                        "description": "A pet to be returned",
+                        "schema": {
+                            "$ref": "#/definitions/Pet"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "info": {
+        "title": "Swagger Petstore",
+        "version": "1.0.0"
+    },
+    "swagger": "2.0",
+    "definitions": {
+        "Category": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "Pet": {
+            "type": "object",
+            "properties": {
+                "category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
